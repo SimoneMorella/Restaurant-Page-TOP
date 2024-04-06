@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-image: url(./bg.jpg);
+    object-fit: cover;
+}
+
+
+.active,
+.aboutBtn {
+    background-image: url(./btn-bg.jpg);
+    object-fit: cover;
+    border-radius: 12px;
+    color: black;
+}
+
+.aboutImg {
+    position: relative;
+}
+
+.aboutImg::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('about-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    opacity: 0.8;
+    mix-blend-mode: hard-light;
+}
+
+.aboutImg.glitchedAnim::before {
+    animation: glitchAnim1 0.5s infinite;
+}
+
+.box {
+    background-color: black;
+}
+
+.glitchEffect {
+    position: relative;
+}
+
+.glitchEffect::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('home.png');
+    background-size: cover;
+    opacity: 0.8;
+    mix-blend-mode: hard-light;
+    animation: glitchAnim1 0.5s infinite;
+}
+
+.menuImg {
+    position: relative;
+}
+
+.menuImg::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    opacity: 0.8;
+    mix-blend-mode: hard-light;
+}
+
+.menuImg.firstImg::before {
+    background-image: url('menu1.png');
+}
+
+.menuImg.secondImg::before {
+    background-image: url('menu2.png');
+}
+
+.menuImg.thirdImg::before {
+    background-image: url('menu3.png');
+}
+
+.menuImg.fourthImg::before {
+    background-image: url('menu4.png');
+}
+
+.card:hover .menuImg::before {
+    animation: glitchAnim1 0.5s infinite;
+}
+
+
+@keyframes glitchAnim1 {
+    0% {
+        background-position: 0 0;
+        filter: hue-rotate(70deg);
+    }
+    10% {
+        background-position: 40px 0;
+    }
+    20% {
+        background-position: -40px 0;
+    }
+    30% {
+        background-position: 6px 0;
+    }
+    40% {
+        background-position: -12px 0;
+    }
+    50% {
+        background-position: -16px 0;
+    }
+    60% {
+        background-position: -32px 0;
+    }
+    70% {
+        background-position: 0px 28px;
+    }
+    80% {
+        background-position: -21px -17px;
+    }
+    100% {
+        background-position: 0px 0px;
+        filter: hue-rotate(360deg)
+    }
+}
